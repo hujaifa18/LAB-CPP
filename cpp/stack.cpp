@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+class myStack
+{
+    public:
+    vector<int>v;
+    void push(int val)
+    {
+        v.push_back(val);
+    }
+    void pop()
+    {
+        v.pop_back();
+    }
+    int top()
+    {
+        return v.back();
+    }
+    bool empty()
+    {
+        return v.empty();
+    }
+};
+int main()
+{
+    myStack st;
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        st.push(x);
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<st.top()<<" ";
+        if(!st.empty())
+        {
+            st.pop();
+        }
+    }
+    cout<<endl;
+    cout<<st.empty()<<endl;
+    return 0;
+}
